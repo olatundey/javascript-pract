@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Projects</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <p>YouTube Subsribe Button</p>
+    <button onclick="
+        subscribe();
+        " class="js-subscribe-button">Subscribe</button>
+
+        <p>Amazon Shipping Calculator</p>
+        <!-- <input> - void element, does not require close tag -->
+        <!-- <input onkeyup=""> - shows as u type -->
+        <input placeholder="Cost of order" 
+        class="js-cost-input" onkeyup="
+        handleCostKeydown(event);
+        ">
+        <!-- clicks,keydowns - events, onclick,onkeydown - listensers -->
+        <button onclick="
+        calculateTotal();
+        ">Calculate</button>
+        <p class="js-total-cost"></p>
+
+    <!-- <button class="js-button">second</button> -->
+
+    <script>
+        //String(25) - change number to string
+        //console.log('25' - 5); //gives 20, auto changed to No,
+        //type corecion or type conversion, + plus work differently
+        //console.log('25' + 5); //gives 255, use No. func
+
+        window.document //window is a builtin obj, JS adds it automatically
+        window.console.log('window');
+
+        function handleCostKeydown(event) {
+            //add event param cos at func, it doesnt know, inherits from code above
+            console.log(event.key); //'typing' like event
+        //check if the key used is Enter, to calc
+        if (event.key === 'Enter') {
+            calculateTotal();
+        }
+        }
+
+
+        function calculateTotal() {
+            const inputElement = document.querySelector('.js-cost-input');
+            //use value to get a text inside a textbox
+            //let cost = inputElement.value;
+            //console.log(typeof cost); //cost is a string here
+            let cost = Number(inputElement.value);
+
+            if (cost < 40) {
+                cost += 10; //not correct math, converts 10 to string, use No()
+            } 
+
+            document.querySelector('.js-total-cost').innerHTML = `Cost is: $${cost}`;
+        }
+
+        function subscribe() {
+            const buttonElement =
+                document.querySelector('.js-subscribe-button');
+            // if (buttonElement.innerHTML === 'Subscribe'){ 
+            //in-case of space use innertext
+            if (buttonElement.innerText === 'Subscribe') {
+                buttonElement.innerHTML = 'Subscribed';
+            } else {
+                buttonElement.innerHTML = 'Subscribe';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

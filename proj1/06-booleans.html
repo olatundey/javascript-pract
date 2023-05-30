@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Booleans</title>
+        <style>
+        </style>
+    </head>
+    <body>
+    <script>
+        /*true
+        false
+
+        console.log(3 < 5 - 5); // === equal to // !== not equal // >=
+        console.log(5 == '5.00'); //== converts both to same type, use === 
+        if (true){ //result is hello, false - else
+            console.log('hello');
+        } else {
+            console.log('else');
+        }
+
+        const age = 15;
+
+        if (age >= 16){  //default is false
+            console.log('You can drive');
+            console.log('Congrats');
+
+        } else if (age >= 14)   {
+            console.log('Almost there!');
+        }  else   {
+            console.log('You can not drive');
+        }*/
+        console.log(true && true); //logical operator
+        console.log(true && false); // LHS , RHS
+        console.log(0.2 >= 0 && 0.2 <= 1 / 3); // LHS , RHS
+
+        console.log(true || false); //logical operator - true
+        console.log(!true); //NOT operator - true
+        
+        //falsy val - false, 0, '', NaN undefined null else truthy
+        console.log('text' / 5); - NaN
+
+        //Ternary operator
+        true ? 'truthy' : 'falsy'; //? if : else
+        const result = 0 ? 'truthy' : 'falsy';
+        console.log(result);
+
+        //turn operator
+        false && console.log('hello');
+
+        //guard operator && will stop early if falsy, if 5 goes thru result hello
+        const message = false && 'hello';
+
+        //default operator ||
+        const currency = 'EUR' || 'USD';  // gives eur , if falsy L, gives USD
+        console.log(currency);
+
+    </script>
+        </body>
+    </html>
+
+
+
+
+

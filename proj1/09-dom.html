@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <button>hello</button>
+        <!-- class attribute adds a label to be able to access 2nd btn, us js- means for javascript -->
+        <button class="js-button">second</button>
+
+    <script>
+        //removes button, shows only text
+        //document.body.innerHTML = 'hello'; //objs.ppty -doc&body property -innerhtml
+        
+        //changes web title
+        //document.title = 'Good job'; //document obj models the webpage, linked to the web[age]
+      console.log(document.title);       
+      //body, special ppty
+        console.log(document.body); //shows all body element in html
+        console.log(typeof document.body); //gives object
+        //shows everything here
+        console.log(document.body.innerHTML);         
+        //below can everything inside the webpage
+        document.body.innerHTML //=  <button>good</button>
+        //method saved inside a object
+        document.querySelector('button');
+        console.log(document.querySelector('button'));  //gets first element or body//hover  
+        console.log(document.querySelector('button').innerHTML);  //gets the value inside html element     
+        console.log(document.querySelector('.js-button').innerHTML);  //gets element with the class name       
+        document.querySelector('button').innerHTML = 'changed'; //changes the element
+        </script>
+        </body>
+    </html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Objects</title>
+        <style>
+        </style>
+    </head>
+    <body>
+    <script>
+    //    const product = {
+    //     name: 'socks',
+    //     price: 1090
+    //    };
+    //    console.log(product);
+    //    console.log(product.price);
+
+    //    product.name = 'cotton socks';
+    //    console.log(product);
+
+    //    //add new ppty
+    //    product.newProperty = true;
+    //    console.log(product);
+    //    //remove
+    //    delete product.newProperty;
+    //    console.log(product);
+
+    const product2 = {
+        name: 'shirt',
+        //['delivery-time']: '1 day' - same
+        'delivery-time': '1 day',
+        rating: { //inner object. nested objecct
+            stars: 4.5,
+            count: 87
+        },
+        //can save a function inside a object
+        //function is another type of value in objects
+        fun: function function1() {
+            console.log('function inside object');
+        }
+    };
+    console.log(product2);
+    console.log(product2.name);
+    console.log(product2['delivery-time']); //bracket notation when having like 'delivery-time' the dash
+    console.log(product2.rating.stars);
+    product2.fun(); //console.log(product2.fun); //object.property
+    //function inside object is a method -- console.log = log i func
+    
+    //JSON.stringify(product2); //convert to JSON
+    console.log(JSON.stringify(product2)); //its a string , use typeof
+    JSON.parse(JSON.stringify(product2)); //back to JS OBJECT
+
+    //OBJECT CAN HAVE property and methods
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+
+    //objects are REFERENCES, 
+    const objects1 = {message: 'hello'};
+    const objects = objects1; //both variable has the same reference, compar by ref
+    objects1.message = 'Good job!';
+    console.log(objects1); //change the property even with const
+
+    const objects3 = {message: 'Good job!'};
+
+    const objects4 = {message: 'Good job!', price: 799}; 
+    //get message property out
+    //const message = object4.message;
+    const {message, price} = object4; //Destructuring shortcut, same as above
+    console.log(message);
+    console.log(price);
+
+    //using a variable name, message
+    const object5 = {
+        //message: message //same as using only message
+        message,
+    };
+    console.log(object5); //gives message ref - good job
+    //shorthand
+    const object6 = {
+        message,
+        //method: function function1() {console.log('method');} OR
+        method() {console.log('method');}
+
+    };
+    console.log(object6); //gives message ref
+    object6.method(); //gives method
+    </script>
+        </body>
+    </html>
