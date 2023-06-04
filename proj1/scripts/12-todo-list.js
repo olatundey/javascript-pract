@@ -8,13 +8,16 @@ function renderTodoList() {
         const html =
             `<div>${name}</div>
         <div>${dueDate}</div>
-        <button onclick="
-        todoList.splice(${index}, 1); 
-        renderTodoList();"
-        class="delete-todo-button">Delete</button>
+        <button 
+
+        class="delete-todo-button js-delete-todo-button">Delete</button>
         `;
         todoListHTML += html;
     });
+            // onclick="
+        // todoList.splice(${index}, 1); 
+        // renderTodoList();"
+        
     // for (let i = 0; i < todoList.length; i++) {
     //     // const todo = todoList[i];
     //     const todoObject = todoList[i];
@@ -41,10 +44,25 @@ function renderTodoList() {
     //console.log(todoListHTML);
     document.querySelector('.js-todo-list').innerHTML = todoListHTML;
 
+    document.querySelectorAll('.js-delete-todo-button')
+    .forEach((deleteButton, index) => {
+        deleteButton.addEventListener('click', () => {
+            todoList.splice(index, 1); 
+            renderTodoList();
+        });
+    });
+            //closure - if a func has access to a valie
+            //console.log(index); //closure for index
+
+
     // Save the updated todo list HTML to local storage
     //localStorage.setItem('todoListHTML', todoListHTML);
 
 }
+
+document.querySelector('.js-add-todo-button').addEventListener('click', () => {
+    addTodo();
+});
 
 function addTodo() {
     const inputElement = document.querySelector('.js-name-input');

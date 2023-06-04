@@ -127,6 +127,30 @@
         //     }
         // };
 
+        [1, -3, 5].filter((value,index) => {
+            return true
+        }); //filter creates a new array 
+        //put value in array if true
+        //now remove negative number, return false if negative
+        console.log([1, -3, 5].filter((value,index) => {
+        //     if (value >= 0) {
+        //     return true;
+        // } else {
+        //     return false;
+        // }
+        return value >= 0;
+        })); 
+
+        //map - creates new array, return adds to array
+        console.log([1,1,3].map((value,index) => {
+            //return 10;
+            return value * 2;
+        }));
+
+        console.log([1,1,3].map(value => value * 2 ));
+
+        //closure - if a func has access to a valie
+
 </script>
 </body>
 
