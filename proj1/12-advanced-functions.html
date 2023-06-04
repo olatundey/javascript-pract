@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Advanced Functions</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <button onclick="" class="js-button">Click</button>
+
+    <script>
+        //addEventListener() - lets us run some code when we interact with the element
+        const buttonElement = document.querySelector('.js-button');
+
+        const eventListener = () => {
+            console.log('click');
+        };
+        buttonElement.addEventListener('click', eventListener); //2 param - event type (onclick) & func
+        
+        buttonElement.removeEventListener('click', eventListener);
+
+        buttonElement.addEventListener('click', () => {
+            console.log('click2');
+        }); 
+
+        // //hoisting , call at begin
+        // greeting();
+        // function greeting() {
+        //     console.log('hello');
+        // }
+        // greeting();
+
+        // const num = 2;
+        // // const function1 = function greeting() {
+        // //     console.log('hello2');
+        // // }
+        // //anonymous func - no name
+        // const function1 = function() {
+        //     console.log('hello2');
+        // }
+        // console.log(function1);
+        // console.log(typeof function1);
+        // function1();
+        // //method - func saved inside Object
+        // const object1 = {
+        //     num: 2,
+        //     fun: function() {
+        //         console.log('hello3');
+        //     }
+        // };
+        // object1.fun();
+        // //passing a value into a func
+        // function display(param) {
+        //     console.log(param);
+        // }
+        // display(2);
+
+        // //pass a FUNC into FUNC
+        // function run(param) {
+        //     param();
+        // }
+        // run(function() {
+        //     console.log('hello4');
+        // }); //callback function
+        //functions are values
+
+        //setTimeout() - run a func in the future
+        //2 param - func, delaytime
+        // setTimeout(function() { //async code
+        //     console.log('timeout');
+        // }, 3000);
+
+        // //asynchronous code, pc wont wait before next line runs, sync code - line by line
+        // console.log('next line');
+
+        // setInterval(function() {
+        //     console.log('interval');
+        // }, 3000);
+        
+        // console.log('next line 2');
+
+        //Array
+        // [
+        //     'make dinner',
+        //     'wash dishes',
+        //     'watch youtube'
+        // //].forEach(function(value, index) {
+        // ].forEach((value, index) => {
+            
+        //     if(value === 'wash dishes') {
+        //         return; //instead of continue
+        //     }
+        //     //loops tru d array, foreach
+        //     console.log(index);
+        //     console.log(value);
+        // });
+
+        // const regularFunction = function(param, param2) {
+        //     console.log('hello');
+        //     return 5;
+        // };
+
+        // const arrowFunction = () => {
+        //     console.log('hello');
+        //     return 5;
+        // }; //arrow function same as func
+        // arrowFunction();
+
+        // const oneParam = (param) => {
+        //     console.log(param + 1);
+        // };
+        // oneParam(2);
+
+        // //const oneLine = () => {return 2 + 3;};
+        // const oneLine = () => 2 + 3; //oneLine()
+        // //arrow func for shortcut, shorter way
+
+        // //shorthand method
+        // const object2 = {
+        //     method: () => {
+
+        //     },
+        //     method () {
+
+        //     }
+        // };
+
+</script>
+</body>
+
+</html>
